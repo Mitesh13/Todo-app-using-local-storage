@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: Poppins!important;
+    letter-spacing: .7px;
 }
 
 *:focus,*:active
@@ -31,6 +35,8 @@ body,html
     text-align: center;
     width: 80%;
     height: auto;
+    overflow: visible;
+
 }
 .heading{
 
@@ -88,6 +94,8 @@ body,html
 .todos
 {
     list-style-type: none;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 .todos li
 {
@@ -98,7 +106,28 @@ body,html
     padding: 10px 0;
     margin-bottom: 7px;
     text-align: left;
+    
 }
+
+.shiverr
+{
+    animation-name: shiverr;
+    animation-duration: .5s;
+}
+
+
+@keyframes shiverr
+{
+    20%{transform: rotateY(0deg);}
+
+    35%{transform: rotateY(6deg);}
+    50%{transform: rotateY(-6deg);}
+    65%{transform: rotateY(6deg);}
+    80%{transform: rotateY(-6deg);}
+    
+    100%{transform: rotateY(0deg);}
+}
+
 .todos button
 {
     width: 15%;
@@ -126,16 +155,21 @@ body,html
 {
     width: 80%;
     word-wrap: break-word;
+    overflow: visible;
+
 }
 
 .todo-container
 {
     max-height: 300px;
+    overflow: hidden;
     overflow-y: auto;
 }
 .expand
 {
     max-height: unset;
+    overflow: hidden;
+    
     overflow-y: visible;
     
 }

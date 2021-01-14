@@ -74,6 +74,12 @@ function createTodo(item)
             renderTodo()
         })
         
+        li.addEventListener("click",(e)=>{
+            // e.stopPropagation()
+            li.classList.add("shiverr")
+            setTimeout(function () { li.classList.remove('shiverr') }, 500)
+            console.log("clicked");
+        })
         checkbox.addEventListener("change",()=>{
             thisObj.isChecked=!thisObj.isChecked
             // console.log(thisObj.isChecked);
