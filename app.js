@@ -6,7 +6,7 @@ const clearBtn = document.getElementById("clear")
 
 var todosArr
 
-if(!localStorage.getItem("todos"))
+if(!localStorage.getItem("todos") || localStorage.getItem("todos")!={})
     todosArr = []
 else
 {
