@@ -4,14 +4,25 @@ const addBtn = document.getElementById("add-btn")
 const refreshBtn = document.getElementById("refresh-btn")
 const clearBtn = document.getElementById("clear")
 
+var todosArr
 
-let todosArr = []
+if(!localStorage.getItem("todos"))
+    todosArr = []
+else
+{
+    todosArr=JSON.parse(localStorage.getItem("todos"))
+    renderTodo()
+}
+    
+
 // localStorage.setItem("hii",JSON.stringify([{item:"10"}]))
 addBtn.addEventListener("click",(e)=>{
-    let li = createTodo(textBox.value,false)
-    todosArr.push(li)
-    console.log(todosArr);
-    localStorage.setItem("todos",JSON.stringify(todosArr[0]))
+    let todoObj = createTodo()
+    
+    todosArr.push(todoObj)
+    // renderTodo()
+    // console.log(todosArr);
+    localStorage.setItem("todos",JSON.stringify(todosArr))
     console.log(JSON.parse(localStorage.getItem("todos")));
     textBox.value=""
 })
@@ -21,42 +32,56 @@ clearBtn.addEventListener("click",(e)=>{
     renderTodo()
 })
 refreshBtn.addEventListener("click",(e)=>{
-    console.log("called");
+    // console.log("called");
     renderTodo()
 })
 
-function createTodo(label,checked)
+function createTodo(item)
 {
-    if(label || textBox.value)
+    if(true)
     {
         const li = document.createElement("li")
+        // console.log(li);
         const btn = document.createElement("button")
         const checkbox = document.createElement("input")
         const title = document.createElement("label")
-        
+        const key = item?item.key:Date.now()
         checkbox.setAttribute("type","checkbox")
         
         btn.textContent="X"
 
+        // console.log(key);
         btn.addEventListener("click",()=>{
             // console.log("deleted",li);
             console.clear()
             todosArr = todosArr.filter(function(element) {
-                console.log(element,li);
-                console.log(element!=li);
-                return element!=li
+                // console.log(element.key,key);
+                return element.key!=key
             })
             // console.log(todosArr);
             renderTodo()
         })
         
-        title.textContent = label
-        checkbox.checked = checked
+        checkbox.addEventListener("change",()=>{
+            thisObj.isChecked=!thisObj.isChecked
+            // console.log(thisObj.isChecked);
+            renderTodo()
+        })
+
+        title.textContent = item?item.title:textBox.value
+        checkbox.checked = item?item.isChecked:false
+
+        var thisObj = item ? item : {
+            key,
+            title:title.textContent,
+            isChecked:checkbox.checked
+        }
 
         li.append(btn,checkbox,title)
+        // console.log(li);
         todos.append(li)
 
-        return li
+        return thisObj 
     }
 }
 
@@ -65,10 +90,12 @@ function createTodo(label,checked)
 function renderTodo()
 {
     todos.innerHTML = ""
-    console.log("removed all");
-
+    // console.log("removed all");
+    
     todosArr.forEach((item)=>{
-        todos.append(item)
-        console.log(item.children[1].checked);
+        createTodo(item)
+        // todosArr.push(todoObj)
+        // console.log(item.isChecked);
     })
+    localStorage.setItem("todos",JSON.stringify(todosArr))
 }
