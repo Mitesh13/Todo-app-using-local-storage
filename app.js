@@ -3,7 +3,8 @@ const textBox = document.getElementById("todo-text")
 const addBtn = document.getElementById("add-btn")
 const refreshBtn = document.getElementById("refresh-btn")
 const clearBtn = document.getElementById("clear")
-
+const expandBtn = document.getElementById("expand")
+let expanded = false
 var todosArr
 
 if(!localStorage.getItem("todos") || localStorage.getItem("todos")=={})
@@ -16,6 +17,16 @@ else
     
 
 // localStorage.setItem("hii",JSON.stringify([{item:"10"}]))
+expandBtn.addEventListener("click",(e)=>{
+    let container = document.querySelector(".todo-container")
+    container.classList.toggle("expand")
+    if(expanded)
+        e.target.innerHTML="Expand"
+    else
+        e.target.innerHTML="Shrink"
+    expanded=!expanded
+})
+
 addBtn.addEventListener("click",(e)=>{
     let todoObj = createTodo()
     
@@ -49,6 +60,7 @@ function createTodo(item)
         checkbox.setAttribute("type","checkbox")
         
         btn.textContent="X"
+        checkbox.classList.length>0?null:checkbox.classList.add("checkbox")
 
         // console.log(key);
         btn.addEventListener("click",()=>{

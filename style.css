@@ -30,11 +30,11 @@ body,html
     margin: 50px 0;
     text-align: center;
     width: 80%;
-    
+    height: auto;
 }
 .heading{
 
-    background-color: hotpink;
+    background-color: crimson;
     color: white;
     margin: 20px 0;
     font-family: arial;
@@ -69,6 +69,7 @@ body,html
     font-weight: 700;
     color:black;
     text-transform: uppercase;
+    
 }
 
 #add-btn
@@ -78,9 +79,10 @@ body,html
     display: inline;
     font-size: 20px;
 }
-#clear
+#clear,#expand
 {
     padding: 10px 10px;
+    margin: 10px 0;
 }
 
 .todos
@@ -94,12 +96,12 @@ body,html
     align-items: center;
     background-color: linen;
     padding: 10px 0;
-    margin: 10px 0;
+    margin-bottom: 7px;
     text-align: left;
 }
 .todos button
 {
-    width: 10%;
+    width: 15%;
     border: none;
     background-color: transparent;
     color: black;
@@ -113,7 +115,12 @@ body,html
 }
 .todos input[type=checkbox]
 {
-    width: 10%;
+    height: 20px!important;
+    width: 20px!important;
+    opacity: 1!important;
+    margin:5px 10px;
+    background-color: #eee;
+    cursor: pointer;
 }
 .todos label
 {
@@ -126,11 +133,23 @@ body,html
     max-height: 300px;
     overflow-y: auto;
 }
+.expand
+{
+    max-height: unset;
+    overflow-y: visible;
+    
+}
 
 @media screen and (min-width:540px)
 {
     .container
     {
         width: 40%;
+        height: auto;
+    }
+    .todo button
+    {
+        /* width: 10%; */
+
     }
 }
