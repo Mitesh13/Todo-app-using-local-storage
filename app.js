@@ -82,13 +82,19 @@ function createTodo(item)
         })
         checkbox.addEventListener("change",()=>{
             thisObj.isChecked=!thisObj.isChecked
-            // console.log(thisObj.isChecked);
+            
+
+            console.log(title);
             renderTodo()
         })
 
         title.textContent = item?item.title:textBox.value
+        if(item)
+        {
+            if(item.isChecked)  title.classList.add("stroke")
+            else  title.classList.remove("stroke")
+        }
         checkbox.checked = item?item.isChecked:false
-
         var thisObj = item ? item : {
             key,
             title:title.textContent,

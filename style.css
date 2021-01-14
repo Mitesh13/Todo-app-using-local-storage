@@ -175,6 +175,10 @@ body,html
     overflow-y: visible;
     
 }
+.stroke
+{
+    text-decoration: line-through;
+}
 
 @media screen and (min-width:540px)
 {
