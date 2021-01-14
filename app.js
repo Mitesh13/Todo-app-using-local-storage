@@ -6,7 +6,7 @@ const clearBtn = document.getElementById("clear")
 
 var todosArr
 
-if(!localStorage.getItem("todos") || localStorage.getItem("todos")!={})
+if(!localStorage.getItem("todos") || localStorage.getItem("todos")=={})
     todosArr = []
 else
 {
@@ -31,10 +31,10 @@ clearBtn.addEventListener("click",(e)=>{
     todosArr=[]
     renderTodo()
 })
-refreshBtn.addEventListener("click",(e)=>{
-    // console.log("called");
-    renderTodo()
-})
+// refreshBtn.addEventListener("click",(e)=>{
+//     // console.log("called");
+//     renderTodo()
+// })
 
 function createTodo(item)
 {
@@ -77,7 +77,7 @@ function createTodo(item)
             isChecked:checkbox.checked
         }
 
-        li.append(btn,checkbox,title)
+        li.append(checkbox,title,btn)
         // console.log(li);
         todos.append(li)
 

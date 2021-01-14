@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+*:focus,*:active
+{
+    outline: none;
+}
+
+button
+{
+    cursor: pointer;
+}
+
+body,html
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.container
+{
+    margin: 50px 0;
+    text-align: center;
+    width: 80%;
+    
+}
+.heading{
+
+    background-color: hotpink;
+    color: white;
+    margin: 20px 0;
+    font-family: arial;
+    text-transform: uppercase;
+    padding:15px 20px;
+}
+
+.text-area
+{
+    display:flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#todo-text
+{
+    /* width: 80%; */
+    border: none;
+    display: inline;
+    padding: 10px 10px;
+    background-color: linen;
+    width: 80%;
+}
+#todo-text::placeholder
+{
+    text-transform: uppercase;
+}
+
+.btn
+{
+    border: none;
+    font-weight: 700;
+    color:black;
+    text-transform: uppercase;
+}
+
+#add-btn
+{
+    width: 15%;
+    padding: 10px 2px;
+    display: inline;
+    font-size: 20px;
+}
+#clear
+{
+    padding: 10px 10px;
+}
+
+.todos
+{
+    list-style-type: none;
+}
+.todos li
+{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    background-color: linen;
+    padding: 10px 0;
+    margin: 10px 0;
+    text-align: left;
+}
+.todos button
+{
+    width: 10%;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+.todos button:hover
+{
+    color:red;
+    /* font-weight: 900; */
+}
+.todos input[type=checkbox]
+{
+    width: 10%;
+}
+.todos label
+{
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.todo-container
+{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+@media screen and (min-width:540px)
+{
+    .container
+    {
+        width: 40%;
+    }
+}
