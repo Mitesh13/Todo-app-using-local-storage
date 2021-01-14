@@ -31,7 +31,7 @@ body,html
 
 .container
 {
-    margin: 50px 0;
+    margin: 10px 0;
     text-align: center;
     width: 80%;
     height: auto;
@@ -45,7 +45,7 @@ body,html
     margin: 20px 0;
     font-family: arial;
     text-transform: uppercase;
-    padding:15px 20px;
+    padding:10px 20px;
 }
 
 .text-area
@@ -84,6 +84,7 @@ body,html
     padding: 10px 2px;
     display: inline;
     font-size: 20px;
+    color: crimson;
 }
 #clear,#expand
 {
@@ -96,6 +97,18 @@ body,html
     list-style-type: none;
     transform-style: preserve-3d;
     perspective: 1000px;
+    
+}
+.todo-container-2
+{
+    margin-top:20px;
+    text-align: left;
+}
+.todo-completed
+{
+    
+    max-height: 100px;
+    overflow: auto;
 }
 .todos li
 {
@@ -103,7 +116,7 @@ body,html
     justify-content: stretch;
     align-items: center;
     background-color: linen;
-    padding: 10px 0;
+    padding: 5px 0;
     margin-bottom: 7px;
     text-align: left;
     
@@ -163,7 +176,7 @@ body,html
 
 .todo-container
 {
-    max-height: 300px;
+    max-height: 250px;
     overflow: hidden;
     overflow-y: auto;
 }

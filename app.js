@@ -1,4 +1,5 @@
 const todos = document.getElementById("todos")
+const todosCompleted = document.getElementById("todos-completed")
 const textBox = document.getElementById("todo-text")
 const addBtn = document.getElementById("add-btn")
 const refreshBtn = document.getElementById("refresh-btn")
@@ -19,7 +20,9 @@ else
 // localStorage.setItem("hii",JSON.stringify([{item:"10"}]))
 expandBtn.addEventListener("click",(e)=>{
     let container = document.querySelector(".todo-container")
+    let containerCompleted = document.querySelector(".todo-completed")
     container.classList.toggle("expand")
+    containerCompleted.classList.toggle("expand")
     if(expanded)
         e.target.innerHTML="Expand"
     else
@@ -103,7 +106,8 @@ function createTodo(item)
 
         li.append(checkbox,title,btn)
         // console.log(li);
-        todos.append(li)
+        thisObj.isChecked?todosCompleted.append(li):todos.append(li)
+        
 
         return thisObj 
     }
@@ -114,6 +118,7 @@ function createTodo(item)
 function renderTodo()
 {
     todos.innerHTML = ""
+    todosCompleted.innerHTML = ""
     // console.log("removed all");
     
     todosArr.forEach((item)=>{
