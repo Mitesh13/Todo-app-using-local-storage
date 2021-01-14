@@ -59,7 +59,7 @@ function createTodo(item)
         const key = item?item.key:Date.now()
         checkbox.setAttribute("type","checkbox")
         
-        btn.textContent="X"
+        btn.innerHTML="&times"
         checkbox.classList.length>0?null:checkbox.classList.add("checkbox")
 
         // console.log(key);

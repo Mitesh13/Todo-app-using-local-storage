@@ -136,6 +136,8 @@ body,html
     color: black;
     font-weight: 700;
     cursor: pointer;
+    font-size: 26px;
+    vertical-align: middle;
 }
 .todos button:hover
 {
