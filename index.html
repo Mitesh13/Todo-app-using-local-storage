@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="T4YOIUW0PaG2b3KHt7DSokCaQ0VCdnW29WntVGu2Ick" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="T4YOIUW0PaG2b3KHt7DSokCaQ0VCdnW29WntVGu2Ick"
+    />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-187428964-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-187428964-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'UA-187428964-1');
+      gtag("config", "UA-187428964-1");
     </script>
 
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="shortcut icon" type="image/jpg" href="/assets/Todo Icon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 class="heading">To-Do List</h1>
-        <div class="text-area">
-            <input type="text" placeholder="Add new todo.." name="todo-text" id="todo-text"/>
-            <button id="add-btn" class="btn">+</button>
-            <!-- <button id="refresh-btn">refresh</button> -->
-        </div>
-        <div class="todo-container">
-            <ul class="todos" id="todos"></ul>
-        </div>
+      <h1 class="heading">To-Do List</h1>
+      <div class="text-area">
+        <input
+          type="text"
+          placeholder="Add new todo.."
+          name="todo-text"
+          id="todo-text"
+        />
+        <button id="add-btn" class="btn">+</button>
+        <!-- <button id="refresh-btn">refresh</button> -->
+      </div>
+      <div class="todo-container">
+        <ul class="todos" id="todos"></ul>
+      </div>
 
-        <div class="todo-container-2">
-            <label for="todos">Completed:</label>
-            
-            <div class="todo-completed">
-                <ul class="todos" id="todos-completed"></ul>
-            </div>
+      <div class="todo-container-2">
+        <label for="todos">Completed:</label>
+
+        <div class="todo-completed">
+          <ul class="todos" id="todos-completed"></ul>
         </div>
-        <button id="clear" class="btn">Clear</button>
-        <button id="expand" class="btn">Expand</button>
+      </div>
+      <button id="clear" class="btn">Clear</button>
+      <button id="expand" class="btn">Expand</button>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
